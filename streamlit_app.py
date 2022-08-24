@@ -1,6 +1,5 @@
 import streamlit
 import pandas
-
 import snowflake.connector
 from urllib.error import URLError
 streamlit.title('My Moms New Healthy Diner')
@@ -40,10 +39,7 @@ except URLError as e:
 
 # write your own comment -what does the next line do? 
 
-
-
 # write your own comment - what does this do?
-
 
 #don't run anything past here while we troubleshoot
 streamlit.stop()
