@@ -57,7 +57,7 @@ def get_fruit_load_list():
          return my_cur.fetchall()
         
  #Add a button to load the fruit
- my_data_rows = get_fruit_load_list() 
+ my_data_rows = get_fruit_load_list('jackfruit') 
  streamlit.dataframe(my_data_rows)
 
 #Allow the end user to add a fruit to the list
