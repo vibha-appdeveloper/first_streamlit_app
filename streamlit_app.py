@@ -43,8 +43,8 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
          #back_from_function = get_fruityvice_data(fruit_choice)
         #streamlt.dataframe(back_from_function)
           
-except URLError as e:
-   streamlit.error()
+#except URLError as e:
+  # streamlit.error()
 
 # write your own comment -what does the next line do? 
 
