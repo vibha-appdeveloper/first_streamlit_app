@@ -36,6 +36,9 @@ streamlit.write('The user entered', fruit_choice)
 
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+streamlit.text(fruityvice_response.json()) # just writes the data to the screen
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+streamlt.dataframe(fruityvice_normalized)
 
     #if not fruit_choice:
         #streamlit.error("Please select a fruit to get information.")
