@@ -12,7 +12,6 @@ streamlit.text('🥑Avocado Toast')
                 
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
@@ -37,7 +36,7 @@ try:
        streamlit.error("Please select a fruit to get information.")
   else:
        back_from_function = get_fruityvice_data(fruit_choice)
-       streamlt.dataframe(back_from_function)
+       streamlit.dataframe(back_from_function)
                         
 except URLError as e:
    streamlit.error()
