@@ -23,9 +23,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Display the table on the page.
 streamlit.dataframe( fruits_to_show)
 
-#Allow the end user to add a fruit to the list
-add_my_fruit = streamlit.text_input('What fruit would you like information about?','Jackfruit')
-streamlit.write('Thanks for adding' , add_my_fruit)
+
 
 #create the repeatable code block (called a function)
 def get_fruityvice_data(this_fruit_choice):
@@ -46,6 +44,9 @@ try:
 except URLError as e:
     streamlit.error()
 
+#Allow the end user to add a fruit to the list
+add_my_fruit = streamlit.text_input('What fruit would you like information about?','Jackfruit')
+streamlit.write('Thanks for adding' , add_my_fruit)
 #don't run anything past here while we troubleshhot
 streamlit.stop()
 
