@@ -22,6 +22,9 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Display the table on the page.
 streamlit.dataframe( fruits_to_show)
 
+#New section to display fruityvice api respone
+streamlit.header("Fruityvice Fruit Advice!")
+
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list")
