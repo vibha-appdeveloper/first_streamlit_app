@@ -22,6 +22,9 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Display the table on the page.
 streamlit.dataframe( fruits_to_show)
 
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+
 #New section to display fruityvice api respone
 streamlit.header("Fruityvice Fruit Advice!")
 #take the json version of the response and normalize it
