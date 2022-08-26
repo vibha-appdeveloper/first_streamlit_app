@@ -47,19 +47,6 @@ import requests
 #fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 #streamlit.dataframe(fruityvice_normalized)
 
-    #if not fruit_choice:
-        #streamlit.error("Please select a fruit to get information.")
-    #else:
-         #back_from_function = get_fruityvice_data(fruit_choice)
-        #streamlt.dataframe(back_from_function)
-          
-#except URLError as e:
-  # streamlit.error()
-
-# write your own comment -what does the next line do? 
-
-# write your own comment - what does this do?
-
 #don't run anything past here while we troubleshoot
 streamlit.stop()
 
@@ -67,14 +54,14 @@ streamlit.header("The fruit load list contains:")
 #Snowflake-related functions
 def get_fruit_load_list():
     with my_cur.cursor() as my_cur:
-         my_cur.execute("SELECT * from fruit_load_list")
+         my_cur.execute("select * from fruit_load_list")
          return my_cur.fetchall()
         
  #Add a button to load the fruit
 if streamlit.button('Get Fruit Load List'):
-    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-    my_data_rows = get_fruit_load_list()
-    streamlit.dataframe(my_data_rows)
+   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+   my_data_rows = get_fruit_load_list()
+   streamlit.dataframe(my_data_rows)
 
 #Allow the end user to add a fruit to the list
 add_my_fruit = ('jackfruit')
